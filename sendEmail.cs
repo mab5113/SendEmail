@@ -1,6 +1,9 @@
-//Code to send an email through a c# application
+﻿//Code to send an email through a c# application
  private void eMailMessage()
         {
+
+        Console.WriteLine("What do you want the message to say?");
+        Console.ReadLine();
             try
             {
                 Microsoft.Office.Interop.Outlook.Application objOutlook = new Microsoft.Office.Interop.Outlook.Application();
@@ -9,8 +12,8 @@
                     as Microsoft.Office.Interop.Outlook.MailItem;
 
                 mailItem.Subject = "New application needs approval";
-                mailItem.To = "matthew.bradbury@omf.com";
-                mailItem.Body = "There is a new application located in the U:\\ApplicationAdoption that needs approval.";
+                mailItem.To = "mattlog21@gmail.com";
+                mailItem.Body = "Testing this out";
                 mailItem.Importance = Microsoft.Office.Interop.Outlook.OlImportance.olImportanceLow;
                 mailItem.Display(false);
                 ((Microsoft.Office.Interop.Outlook._MailItem)mailItem).Send();
